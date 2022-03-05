@@ -1,3 +1,5 @@
+<script>
+
 let pokemonList = [{
 
   name:'Bulbasaur'
@@ -20,3 +22,4 @@ type: ['water']
 
 }
 ];
+</scrip>
