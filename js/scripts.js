@@ -1,24 +1,24 @@
-<script>
+
 
 let pokemonList = [{
 
-  name:'Bulbasaur'
-  Height: 2.04,
-  type: ['grass', 'poison']
+  name:'Charizard'
+  Height: 5.07,
+  type: ['fire', 'flying']
 
 },
 
 {
-  name: 'Charmander'
-  Height: 2.00,
-  type: ['fire']
+  name: 'pikachu'
+  Height: 1.04,
+  type: ['electric']
 
 },
 
 {
-name: 'Squirtle'
-Height: 1.08,
-type: ['water']
+name: 'Bulbasaur'
+Height: 2.04,
+type: ['grass', 'poison']
 
 }
 ];
@@ -27,4 +27,3 @@ type: ['water']
   // for (var i = 0; i < array.length; i++) {
   array[i]
 }
-</scrip>
