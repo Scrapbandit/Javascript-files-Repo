@@ -23,7 +23,8 @@ type: ['grass', 'poison']
 }
 ];
 
+//loops
+  // for (let i = 0; i < pokemonList.length; i++) {
 
-  // for (var i = 0; i < array.length; i++) {
-  array[i]
+
 }
