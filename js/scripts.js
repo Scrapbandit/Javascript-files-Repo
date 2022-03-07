@@ -28,16 +28,13 @@ type: ['grass', 'poison']
   // for (let i = 0; i < pokemonList.length; i++) {
   //}
   for (let i = 0; i < pokemonList.length; i++) {
-    document.write(pokemonList[i] + "<br>");
+    document.write('<p>' + pokemonList[i].name + '</p>');
 //what to insert in the document.write
-
+}
 //loops option 2 (second try)
 
 
-  for(var i = 3; i >= 0; i--){
+/*  for(var i = 3; i >= 0; i--){
   if(i == 0){
     document.write(<p>'name' + 'height' .</p>')
-  }
-}
-
-}
+non correct code */
