@@ -27,9 +27,10 @@ type: ['grass', 'poison']
   for (let i = 0; i < pokemonList.length; i++) {
     if (pokemonList[i].height > 5) {
     //  console.log('WOW! this Pokemon is big')
-    document.write(pokemonList[i].name + '(height : ' + pokemonList[i].height')'  + 'WOW! this Pokemon is big! </br>')}
+    document.write(pokemonList[i].name + '(height : ' + pokemonList[i].height  +')' + 'WOW! this Pokemon is big! </br>')
+  }
     else {
-  document.write (pokemonList[i].name + 'height : ' + pokemonList[i].height +'  </br>')
+  document.write (pokemonList[i].name + '(height : ' + pokemonList[i].height +')  </br>')
 }
 //what to insert in the document.write
 }
