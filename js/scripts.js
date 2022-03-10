@@ -1,4 +1,4 @@
-//wrapping the code in IIFE 
+//wrapping the code in IIFE
 
 let pokemonRepository = (function () {
 
@@ -22,14 +22,6 @@ type: ['grass', 'poison']
 }
 ];
 
-  //.foreach() task 1.5
-
-pokemonList.forEach(function(pokemon){
-  document.write(pokemon.name +" "+ "(height)" +" "+ pokemon.height + " "+ "type:" + " " + pokemon.type);
-  document.write ( '<p/>');
-});
-//
-
 return {
   add: function (pokemon) {
     pokemonList.push (pokemon);
@@ -40,8 +32,13 @@ return {
 };
 })();
 
-// add() function
+//.foreach() task 1.5 (updated)
+pokemonRepository.getAll().forEach(function(pokemon){
+document.write(pokemon.name +" "+ "(height)" +" "+ pokemon.height + " "+ "type:" + " " + pokemon.type);
+document.write ( '<p/>');
+});
 
+// add() function
 console.log(pokemonRepository.getAll());
 pokemonRepository.add({name: 'Mew'});
 console.log(pokemonRepository.getAll());
