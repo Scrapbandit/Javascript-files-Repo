@@ -1,4 +1,6 @@
+//wrapping the code in IIFE 
 
+let pokemonRepository = (function () {
 
 let pokemonList = [{
 
@@ -20,12 +22,36 @@ type: ['grass', 'poison']
 }
 ];
 
-//.foreach() function task 1.5
+  //.foreach() task 1.5
 
 pokemonList.forEach(function(pokemon){
-  document.write(pokemon.name +" "+ "(height)" +" "+ pokemon.height + " ");
+  document.write(pokemon.name +" "+ "(height)" +" "+ pokemon.height + " "+ "type:" + " " + pokemon.type);
   document.write ( '<p/>');
 });
+//
+
+return {
+  add: function (pokemon) {
+    pokemonList.push (pokemon);
+  },
+  getAll: function () {
+    return pokemonList;
+  }
+};
+})();
+
+// add() function
+
+console.log(pokemonRepository.getAll());
+pokemonRepository.add({name: 'Mew'});
+console.log(pokemonRepository.getAll());
+
+
+
+
+
+
+
 
 
 /*
@@ -39,11 +65,12 @@ pokemonList.forEach(function(pokemon){
     else {
   document.write (pokemonList[i].name + '(height : ' + pokemonList[i].height +')  </br>')
 }
-*/
+} */
 
-
+/*
 let pokemon= { name: 'Charizard', height: 5.07};
 
 if (pokemon.height > 5) {
   console.log('WOW! this Pokemon is big');
 }
+*/
