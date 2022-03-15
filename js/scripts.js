@@ -38,14 +38,21 @@ function getAll () {
     return pokemonList;
   }
 
+
+//addListItem function task 1.6 and deleting document.write
+
 function addListItem(pokemon){
   let pokemonList = document.querySelector(".pokemon-list");
   let listpokemon = document.createElement("li");
-  let button = document.createElement ("button");
+  let button = document.createElement ("button"); // create button
   button.innerText = pokemon.name;
   listpokemon.appendChild(button);
   pokemonList.appendChild(listpokemon);
+  button.addEventListener("click", function(){ //addEventListener
+  function showDetails(pokemon);
+  })
 }
+
 return {
    add: add,
    getAll: getAll,
@@ -53,9 +60,10 @@ return {
  };
 })();
 
-// add() function
-pokemonRepository.add({name: "Mew", height: 1.5, type: ["Psychic"] });
+// add() function new pokemon to the list
+pokemonRepository.add({name: "Mew", height: 1.5, type: ["Psychic"] 
 console.log(pokemonRepository.getAll());
 pokemonRepository.getAll().forEach(function (pokemon) {
 pokemonRepository.addListItem(pokemon);
-});
+   });
+ });
