@@ -37,7 +37,7 @@ let pokemonRepository = (function () {
   }
 
 
-  function loadList() {
+  function loadList() { //loadList
     return fetch(apiUrl).then(function (response) {
       return response.json();
     }).then(function (json) {
@@ -52,7 +52,7 @@ let pokemonRepository = (function () {
       console.error(e);
     })
   }
-  function loadDetails(item) {
+  function loadDetails(item) { //loadDetails
     let url = item.detailsUrl;
     return fetch(url).then(function (response) {
       return response.json();
