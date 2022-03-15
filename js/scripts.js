@@ -61,9 +61,8 @@ return {
 })();
 
 // add() function new pokemon to the list
-pokemonRepository.add({name: "Mew", height: 1.5, type: ["Psychic"] 
+pokemonRepository.add({name: "Mew", height: 1.5, type: ["Psychic"] });
 console.log(pokemonRepository.getAll());
 pokemonRepository.getAll().forEach(function (pokemon) {
 pokemonRepository.addListItem(pokemon);
    });
- });
