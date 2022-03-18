@@ -16,3 +16,13 @@
     border: 2px solid #556B2F;
 
 }
+/*css /*adding the modal container task 1.8
+#modal-container {
+  display: none;
+}
+
+#modal-container.is-visible { /*modal shown on when 'isvisible'added
+
+  display: block;
+}
+*/

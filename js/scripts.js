@@ -1,6 +1,7 @@
 //wrapping the code in IIFE
 
 let pokemonRepository = (function () {
+  let modalContainer = document.querySelector('#modal-container');
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=20'; //using fetch in repo
 
@@ -67,9 +68,54 @@ let pokemonRepository = (function () {
   }
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      console.log(pokemon);
+      //adding showModal
+      showModal(pokemon.name, pokemon.height, pokemon.types, pokemon.imageUrl);
+      console.log("pokemon selected: " + pokemon.name + "is" + pokemon.height + "and with the abilities of" + pokemon.types);
+      let modal = document.createElement('div');
+      //modal.classList.add('modal')
     });
   }
+//exercise 1.8 the modal container
+
+  function showModal(name, height, type, imageUrl){
+    
+
+    let modalContainer = document.querySelector(".modal-container");
+    document.querySelector('.modal__title').innerText = name;
+    //modalContainer.classList.add("is-visible");
+    //modalContainer.innerText = name;
+    let description = 'Height: ' + height + '<br>type: ' + type;
+
+    document.querySelector('.modal__text').innerHTML = description;
+    document.querySelector('.modal__img').setAttribute('src', imageUrl);
+    console.log(imageUrl);
+
+    let modal = document.createElement("div");
+    modal.classList.add("modal");
+
+    let closeButton = document.createElement(".modal-close");
+    closeButton.addEventListener("click", hideModal);
+
+    window.addEventListener('keydown', (e) => {
+    console.log(e.key);
+    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible'))
+    hideModal();
+    });
+
+    let titleElement = document.createElement ("h1");
+    titleElement.innerText = title;
+
+    modal.appendChild(closeButtonElement);
+    modal.appendChild(titleElement);
+    modal.appendChild(contentElement);
+    modalContainer.appendChild(modal);
+
+    modalContainer.classList.add("is-visible");
+  }
+
+/*  document.querySelector("#show-modal").addEventListener("click", ()=>{
+    showModal('Modal title', "This is the modal content!");
+  });*/
 
   return {
     add: add,
@@ -77,7 +123,8 @@ let pokemonRepository = (function () {
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
-    showDetails: showDetails
+    showDetails: showDetails,
+    showModal: showModal
   };
 })();
 
