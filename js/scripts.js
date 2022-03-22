@@ -79,7 +79,7 @@ let pokemonRepository = (function () {
 //exercise 1.8 the modal container
 
   function showModal(name, height, type, imageUrl){
-  //let modalContainer = document.querySelector(".modal-container");
+  let modalContainer = document.querySelector(".modal-container");
     document.querySelector('.modal__title').innerText = name;
     //modalContainer.classList.add("is-visible");
     //modalContainer.innerText = name;
@@ -92,7 +92,7 @@ let pokemonRepository = (function () {
     //let modal = document.createElement("div");
     //modal.classList.add("modal");
 
-    let closeButton = document.createElement(".modal-close");
+    let closeButton = document.querySelector(".modal-close");//changed from createElement to querySelector.
     closeButton.addEventListener("click", hideModal);
 
     window.addEventListener('keydown', (e) => {
@@ -112,7 +112,7 @@ let pokemonRepository = (function () {
     modalContainer.classList.add("is-visible");
   }
 
-  Function hideModal() {
+  function hideModal() {//payiing attention to type errors function with  small letters
     let modalContainer = document.querySelector('.modal-container');
     modalContainer.classList.remove('is-visible');
   }
