@@ -78,19 +78,30 @@ let pokemonRepository = (function () {
   }
 //exercise 1.8 the modal container
 
-  function showModal(name, height, type, imageUrl){
-  let modalContainer = document.querySelector(".modal-container");
-    document.querySelector('.modal__title').innerText = name;
-    //modalContainer.classList.add("is-visible");
-    //modalContainer.innerText = name;
-    let description = 'Height: ' + height + '<br>type: ' + type;
-
-    document.querySelector('.modal__text').innerHTML = description;
-    document.querySelector('.modal__img').setAttribute('src', imageUrl);
-    console.log(imageUrl);
-
-    //let modal = document.createElement("div");
-    //modal.classList.add("modal");
+function showModal(item){
+  let modalBody = $('.modal-body');
+     let modalTitle = $('.modal-title');
+     let modalHeader = $ ('.modal-header');
+ 
+     modalTitle.empty();
+     modalBody.empty();
+ 
+     let nameElement = $('<h1>'+ item.name + '</h1>');
+     let imageElementFront = $('img class="modal-img" style="width:50%">');
+    imageElementFront.attr("src", item.imageUrlFront)
+     let imageElementBack = $('img class="modal-img" style="width:50%">');
+      imageElementBack.attr("src", item.imageUrlBack);
+ 
+     let heightElement = $("<p>" + "height : " + item.height + "</p>");
+     let weightElement = $("<p>" + "weight : " + item.weight + "</p>");
+     let typetElement = $("<p>" + "type : " + item.type + "</p>");
+ 
+     modalTitle.append(nameElement);
+     modalBody.append (imageElementFront);
+     modalBody.append (imageElementBack);
+     modalBody.append (heightElement);
+     modalBody.append (weightElement);
+     modalBody.append (typeElement);
 
     let closeButton = document.querySelector(".modal-close");//changed from createElement to querySelector.
     closeButton.addEventListener("click", hideModal);
