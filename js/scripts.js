@@ -29,7 +29,11 @@ let pokemonRepository = (function () {
     let listpokemon = document.createElement("li");
     let button = document.createElement ("button"); // create button
     button.innerText = pokemon.name;
-    button.classList.add("button-class");
+    // button.classList.add("button-class");
+    button.classList.add('btn-outline-dark');
+    button.setAttribute("data-toggle", "modal");
+    button.setAttribute("data-target", "#pokemonModal");
+    listpokemon.classList.add('group-list-item');
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
     button.addEventListener("click", function(){ //addEventListener
@@ -87,10 +91,9 @@ function showModal(item){
      modalBody.empty();
  
      let nameElement = $('<h1>'+ item.name + '</h1>');
-     let imageElementFront = $('img class="modal-img" style="width:50%">');
-    imageElementFront.attr("src", item.imageUrlFront)
-     let imageElementBack = $('img class="modal-img" style="width:50%">');
-      imageElementBack.attr("src", item.imageUrlBack);
+     let imageElement = $('img class="modal-img" style="width:50%">');
+    imageElement.attr("src", item.imageUrl);
+    
  
      let heightElement = $("<p>" + "height : " + item.height + "</p>");
      let weightElement = $("<p>" + "weight : " + item.weight + "</p>");

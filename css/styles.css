@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(255, 222, 113);
+}
+
 .button-class {
   background-color: #556B2F; /* olive Green */
     border: none;
@@ -23,7 +27,7 @@ header {
     align-items: center;
     border: 1px solid #000;
     padding: 0.5rem 0;
-    background: lightpink;
+    background: rgb(235, 100, 120);
 }
 
 #pokemon__logo {
