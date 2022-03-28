@@ -1,19 +1,21 @@
 # Javascript-files-Repo
 
-POKEDEX APP
+# POKEDEX APP
 
-An new app based on Pokemon theme, allows you to check the aspects, details and general basic information of each pokemon.
+_An new app based on Pokemon theme, allows you to check the aspects, details and general basic information of each pokemon._
 
-USED TECHNOLOGIES
+# USED TECHNOLOGIES
 
-HTML
-CSS
-JavaScript
+<li> HTML <br>
+<li>CSS <br>
+<li>JavaScript <br>
 
-LIBRARIES
 
-Pokedex
-Pokeapi
-Bootstrap
-polyfill.js
-fetch.js
+# LIBRARIES
+<li>
+<li>Pokedex <br>
+<li>Pokeapi <br>
+<li>Bootstrap <br>
+<li>polyfill.js <br>
+<li>fetch.js <br>
+
