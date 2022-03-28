@@ -55,7 +55,7 @@ let pokemonRepository = (function () {
         add(pokemon);
       });
     }).catch(function (e) {
-      console.error(e);
+      console.error(e); 
     })
   }
   function loadDetails(item) { //loadDetails
@@ -155,4 +155,4 @@ pokemonRepository.loadList().then(function(){
   pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
-});
+}); 
