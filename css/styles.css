@@ -1,7 +1,14 @@
 body {
   background-color: rgb(255, 222, 113);
+  margin: auto;
+  padding: auto;
 }
-
+.header__item {
+  background-color: rgb(148, 59, 59);
+  padding: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
 .button-class {
   background-color: #556B2F; /* olive Green */
     border: none;
@@ -27,16 +34,35 @@ header {
     align-items: center;
     border: 1px solid #000;
     padding: 0.5rem 0;
-    background: rgb(235, 100, 120);
+    background: rgb(14, 13, 13);
+}
+.pikachu_icon {
+  margin-left: auto;
+  margin-right: auto;
+padding: 15px;
 }
 
-#pokemon__logo {
-    padding: 2rem 0;
-    max-width: 50vw;
+.pokemon_logo {
+  display: block;
+    padding: 100;
+    width: 500px;
     height: auto;
-}
+    margin-right: auto;
+    margin-left: auto;
+float: left; 
+ }
  
+  h1 {
+    color: black;
+    text-align: center;
+    margin: auto;
+  }
+  p {
+    color: black;
+    text-align: center;
+  }
 .pokemon-list {
+  padding: auto;
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -48,6 +74,12 @@ header {
 .list-group{
   margin-right: 100px;
   margin-left: 100px;
+}
+@supports (display: grid) {
+  .pokemon-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 .modal-container {
   position: fixed;
