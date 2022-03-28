@@ -10,3 +10,10 @@ HTML
 CSS
 JavaScript
 
+LIBRARIES
+
+Pokedex
+Pokeapi
+Bootstrap
+polyfill.js
+fetch.js
