@@ -20,9 +20,6 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
-
-  //addListItem function task 1.6 and deleting document.write
-
   function addListItem(pokemon){
     let pokemonList = document.querySelector(".pokemon-list");
     let listpokemon = document.createElement("li");
@@ -31,7 +28,6 @@ let pokemonRepository = (function () {
     button.setAttribute("data-target", "#modal-container");
 
     button.innerText = pokemon.name;
-    // button.classList.add("button-class");
     button.classList.add('btn-outline-dark');
     listpokemon.classList.add('group-list-item');
     listpokemon.appendChild(button);
@@ -40,7 +36,6 @@ let pokemonRepository = (function () {
       showDetails(pokemon);
     })
   }
-
 
   function loadList() { //loadList
     return fetch(apiUrl).then(function (response) {
@@ -117,8 +112,6 @@ function showModal(item){
     $modalContainer.removeClass("is-visible");
 }
 
-
-
   return {
     add: add,
     getAll: getAll,
@@ -131,8 +124,6 @@ function showModal(item){
   };
 })();
 
-//pokemonRepository.add({name: "Mew", height: 1.5, type: ["Psychic"] });
-//console.log(pokemonRepository.getAll());
 pokemonRepository.loadList().then(function(){
   pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
