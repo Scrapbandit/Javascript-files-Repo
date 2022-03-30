@@ -91,7 +91,7 @@ function showModal(item){
      modalBody.empty();
  
      let nameElement = $('<h1>'+ item.name + '</h1>');
-     let imageElement = $('img class="modal__img" style="width:50%">');
+     let imageElement = $('<img class="modal__img" style="width:50%">');
     imageElement.attr("src", item.imageUrl);
     
  
