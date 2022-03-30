@@ -28,11 +28,11 @@ let pokemonRepository = (function () {
     let pokemonList = document.querySelector(".pokemon-list");
     let listpokemon = document.createElement("li");
     let button = document.createElement ("button"); // create button
+    button.setAttribute("data-toggle", "modal");
+    button.setAttribute("data-target", "#modal-container");
     button.innerText = pokemon.name;
     // button.classList.add("button-class");
     button.classList.add('btn-outline-dark');
-    button.setAttribute("data-toggle", "modal");
-    button.setAttribute("data-target", "#pokemonModal");
     listpokemon.classList.add('group-list-item');
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
@@ -66,6 +66,7 @@ let pokemonRepository = (function () {
       // Now we add the details to the item
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
+      item.weight = details.weight;
       item.types = details.types;
     }).catch(function (e) {
       console.error(e);
@@ -97,8 +98,16 @@ function showModal(item){
  
      let heightElement = $("<p>" + "height : " + item.height + "</p>");
      let weightElement = $("<p>" + "weight : " + item.weight + "</p>");
-     let typetElement = $("<p>" + "type : " + item.type + "</p>");
- 
+
+     let typeElement = "";
+     if (item.types.length > 0) {
+       let types = ""
+       item.types.forEach(function(t) {
+        console.log(t)
+        types += t.type.name + " "; 
+    });
+      typeElement = $("<p>" + "type : " + types + "</p>");
+    }
      modalTitle.append(nameElement);
      modalBody.append (imageElementFront);
      modalBody.append (imageElementBack);
