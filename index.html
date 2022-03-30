@@ -49,53 +49,26 @@
   <p>The Pokemon Dictionary </p>
 
 	<main class="pokemon-overview">
-    <header class="container-fluid">
-      <div class="row" id="pokemon-list"></div>
-    </header>
-    
-          <ul
-            class="pokemon-list group-list"
-            data-toggle="modal"
-            data-target="#pokemonModal"
-          ></ul>
-          
-          <!-- Modal -->
-
-          <div 
-            class="modal-fade"
-            id="pokemon"
-            tabindex="-1" 
-            role="dialog" 
-            aria-labelledby="PokemonModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="PokemonModalLabel">/h5>
-                  <button 
-                  type="button" 
-                  class="close" 
-                  data-dismiss="modal" 
-                  aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  ...
-                </div>
-                <div class="modal-footer">
-                  <button 
-                  type="button" 
-                  class="btn btn-secondary" 
-                  data-dismiss="modal" >Close</button>
-                </div>
-              </div> 
-            </div>
+    <ul class="pokemon-list group-list"></ul>
+    <div class="modal fade" id="modal-container" tabindex="-1" role="dialog" aria-labelledby="modal-container" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title" id="modal-title">.</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
-   </div>
-</main>
+    </div>
+
+  </main>
 
   <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"

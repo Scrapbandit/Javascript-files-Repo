@@ -63,6 +63,7 @@ let pokemonRepository = (function () {
       // Now we add the details to the item
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
+      item.weight = details.weight;
       item.types = details.types;
     }).catch(function (e) {
       console.error(e);
@@ -90,13 +91,21 @@ function showModal(item){
  
      let heightElement = $("<p>" + "height : " + item.height + "</p>");
      let weightElement = $("<p>" + "weight : " + item.weight + "</p>");
-     let typesElement = $("<p>" + "types : " + item.types + "</p>");
- 
+
+     let typeElement = "";
+     if (item.types.length > 0) {
+       let types = ""
+       item.types.forEach(function(t) {
+        console.log(t)
+        types += t.type.name + " "; 
+    });
+      typeElement = $(`<p>type : ${types}</p>`);
+    }
      modalTitle.append(nameElement);
      modalBody.append (imageElement);
      modalBody.append (heightElement);
      modalBody.append (weightElement);
-     modalBody.append (typesElement);
+     modalBody.append (typeElement);
 
     modalContainer.classList.add("is-visible");
   }
