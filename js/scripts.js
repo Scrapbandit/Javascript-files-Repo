@@ -92,7 +92,7 @@ function showModal(item){
  
      let nameElement = $('<h1>'+ item.name + '</h1>');
      let imageElement = $('<img class="modal__img" style="width:50%">');
-    imageElement.attr("src", item.imageUrl);
+    imageElement.attr("src", pokemon.imageUrl);
     
  
      let heightElement = $("<p>" + "height : " + item.height + "</p>");
