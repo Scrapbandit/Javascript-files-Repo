@@ -27,6 +27,9 @@ let pokemonRepository = (function () {
     let pokemonList = document.querySelector(".pokemon-list");
     let listpokemon = document.createElement("li");
     let button = document.createElement ("button"); // create button
+    button.setAttribute("data-toggle", "modal");
+    button.setAttribute("data-target", "#modal-container");
+
     button.innerText = pokemon.name;
     // button.classList.add("button-class");
     button.classList.add('btn-outline-dark');
