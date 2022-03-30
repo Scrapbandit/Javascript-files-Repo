@@ -3,7 +3,6 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=20'; //using fetch in repo
-  let modalContainer = document.querySelector('#modal-container');
 
 
   function add(pokemon){
@@ -91,13 +90,13 @@ function showModal(item){
  
      let heightElement = $("<p>" + "height : " + item.height + "</p>");
      let weightElement = $("<p>" + "weight : " + item.weight + "</p>");
-     let typeElement = $("<p>" + "type : " + item.type + "</p>");
+     let typesElement = $("<p>" + "types : " + item.types + "</p>");
  
      modalTitle.append(nameElement);
      modalBody.append (imageElement);
      modalBody.append (heightElement);
      modalBody.append (weightElement);
-     modalBody.append (typeElement);
+     modalBody.append (typesElement);
 
     modalContainer.classList.add("is-visible");
   }
