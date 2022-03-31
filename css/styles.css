@@ -1,9 +1,12 @@
 body {
+  text-align: center;
   background-color: rgb(255, 222, 113);
   margin: auto;
   padding: auto;
+  
 }
 .header__item {
+  display: auto;
   background-color: rgb(148, 59, 59);
   padding: auto;
   margin-left: auto;
@@ -50,7 +53,6 @@ padding: 15px;
     height: auto;
     margin-right: auto;
     margin-left: auto;
-float: left; 
  } 
  
   h1 {
@@ -66,7 +68,7 @@ float: left;
   padding: auto;
   list-style: none;
   display: flex;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 200px repeat(auto-fill, 100px) 300px;
   text-align: center;
   grid-row-gap: 20px;
   grid-column-gap: 100px;
@@ -76,6 +78,7 @@ float: left;
   display: flex;
   margin-right: 100px;
   margin-left: 100px;
+  
 }
 @supports (display: grid) {
   .pokemon-list {

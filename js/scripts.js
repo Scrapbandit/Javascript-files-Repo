@@ -2,7 +2,7 @@
 
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=20'; //using fetch in repo
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=50'; //using fetch in repo
 
 
   function add(pokemon){
@@ -83,7 +83,7 @@ function showModal(item){
      modalBody.empty();
  
      let nameElement = $('<h1>'+ item.name + '</h1>');
-     let imageElement = $('<img class="imageUrl" style="width:50%">');
+     let imageElement = $('<img class="imageUrl" style="width:50%" "max-height: 25%">');
      imageElement.attr("src", item.imageUrl);
     
  
