@@ -2,7 +2,7 @@
 
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=20'; //using fetch in repo
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=50'; //using fetch in repo
   let modalContainer = document.querySelector('#modal-container');
 
 
