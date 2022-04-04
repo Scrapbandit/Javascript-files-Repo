@@ -5,13 +5,7 @@ body {
   padding: auto;
   
 }
-.header__item {
-  display: auto;
-  background-color: rgb(148, 59, 59);
-  padding: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 button.btn-outline-dark {
   background-color: #556B2F; /* olive Green */
     border: none;
@@ -40,21 +34,7 @@ header {
     padding: 0.5rem 0;
     background: rgb(14, 13, 13);
 }
- .pikachu_icon {
-  margin-left: auto;
-  margin-right: auto;
-padding: 15px;
-} 
 
- #pokemon_logo {
-  display: block;
-    padding: 100;
-    width: 500px;
-    height: auto;
-    margin-right: auto;
-    margin-left: auto;
- } 
- 
   h1 {
     color: black;
     text-align: center;
