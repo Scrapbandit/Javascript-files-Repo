@@ -22,9 +22,9 @@ const pokemonRepository = (function () {
   }
 
   function addListItem(pokemon){
-    const pokemonList = document.querySelector(".pokemon-list");
-    const listpokemon = document.createElement("li");
-    const button = document.createElement ("button"); // create button
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listpokemon = document.createElement("li");
+    let button = document.createElement ("button"); // create button
     button.setAttribute("data-toggle", "modal");
     button.setAttribute("data-target", "#modal-container");
     button.innerText = pokemon.name;
@@ -44,7 +44,7 @@ const pokemonRepository = (function () {
     }).then(function (json) {
       json.results.forEach(function (item) {
         console.log(item)
-        const pokemon = {
+        let pokemon = {
           name: item.name,
           detailsUrl: item.url
         };
@@ -55,7 +55,7 @@ const pokemonRepository = (function () {
     })
   }
   function loadDetails(item) { //loadDetails
-    const url = item.detailsUrl;
+    let url = item.detailsUrl;
     return fetch(url).then(function (response) {
       return response.json();
     }).then(function (details) {
@@ -83,17 +83,17 @@ function showModal(item){
      modalTitle.empty();
      modalBody.empty();
  
-     const nameElement = $('<h1>'+ item.name + '</h1>');
-     const imageElement = $('<img class="imageUrl" style="width:50%" "max-height: 25%">');
+     let nameElement = $('<h1>'+ item.name + '</h1>');
+     let imageElement = $('<img class="imageUrl" style="width:50%" "max-height: 25%">');
      imageElement.attr("src", item.imageUrl);
     
  
-     const heightElement = $("<p>" + "height : " + item.height + "</p>");
-     const weightElement = $("<p>" + "weight : " + item.weight + "</p>");
+     let heightElement = $("<p>" + "height : " + item.height + "</p>");
+     let weightElement = $("<p>" + "weight : " + item.weight + "</p>");
 
-     const typeElement = "";
+     let typeElement = "";
      if (item.types.length > 0) {
-       const types = ""
+       let types = ""
        item.types.forEach(function(t) {
         console.log(t)
         types += t.type.name + " "; 
@@ -114,14 +114,14 @@ function showModal(item){
 }
 
   return {
-    add,
-    getAll,
-    addListItem,
-    loadList,
-    loadDetails,
-    showDetails,
-    showModal,
-    hideModal
+    add: add,
+    getAll: getAll,
+    addListItem: addListItem,
+    loadList: loadList,
+    loadDetails: loadDetails,
+    showDetails: showDetails,
+    showModal: showModal,
+    hideModal: hideModal
   };
 })();
 
