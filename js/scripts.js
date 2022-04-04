@@ -1,9 +1,9 @@
 //wrapping the code in IIFE
 
-let pokemonRepository = (function () {
-  let pokemonList = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=50'; //using fetch in repo
-  let modalContainer = document.querySelector('#modal-container');
+const pokemonRepository = (function () {
+  const pokemonList = [];
+  const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=50'; //using fetch in repo
+  const modalContainer = document.querySelector('#modal-container');
 
 
   function add(pokemon){
@@ -22,9 +22,9 @@ let pokemonRepository = (function () {
   }
 
   function addListItem(pokemon){
-    let pokemonList = document.querySelector(".pokemon-list");
-    let listpokemon = document.createElement("li");
-    let button = document.createElement ("button"); // create button
+    const pokemonList = document.querySelector(".pokemon-list");
+    const listpokemon = document.createElement("li");
+    const button = document.createElement ("button"); // create button
     button.setAttribute("data-toggle", "modal");
     button.setAttribute("data-target", "#modal-container");
     button.innerText = pokemon.name;
@@ -44,7 +44,7 @@ let pokemonRepository = (function () {
     }).then(function (json) {
       json.results.forEach(function (item) {
         console.log(item)
-        let pokemon = {
+        const pokemon = {
           name: item.name,
           detailsUrl: item.url
         };
@@ -55,7 +55,7 @@ let pokemonRepository = (function () {
     })
   }
   function loadDetails(item) { //loadDetails
-    let url = item.detailsUrl;
+    const url = item.detailsUrl;
     return fetch(url).then(function (response) {
       return response.json();
     }).then(function (details) {
@@ -76,24 +76,24 @@ let pokemonRepository = (function () {
   }
 
 function showModal(item){
-  let modalContainer = document.querySelector('.modal-container');
-  let modalBody = $('.modal-body');
-     let modalTitle = $('.modal-title');
+  const modalContainer = document.querySelector('.modal-container');
+  const modalBody = $('.modal-body');
+     const modalTitle = $('.modal-title');
  
      modalTitle.empty();
      modalBody.empty();
  
-     let nameElement = $('<h1>'+ item.name + '</h1>');
-     let imageElement = $('<img class="imageUrl" style="width:50%" "max-height: 25%">');
+     const nameElement = $('<h1>'+ item.name + '</h1>');
+     const imageElement = $('<img class="imageUrl" style="width:50%" "max-height: 25%">');
      imageElement.attr("src", item.imageUrl);
     
  
-     let heightElement = $("<p>" + "height : " + item.height + "</p>");
-     let weightElement = $("<p>" + "weight : " + item.weight + "</p>");
+     const heightElement = $("<p>" + "height : " + item.height + "</p>");
+     const weightElement = $("<p>" + "weight : " + item.weight + "</p>");
 
-     let typeElement = "";
+     const typeElement = "";
      if (item.types.length > 0) {
-       let types = ""
+       const types = ""
        item.types.forEach(function(t) {
         console.log(t)
         types += t.type.name + " "; 
@@ -114,14 +114,14 @@ function showModal(item){
 }
 
   return {
-    add: add,
-    getAll: getAll,
-    addListItem: addListItem,
-    loadList: loadList,
-    loadDetails: loadDetails,
-    showDetails: showDetails,
-    showModal: showModal,
-    hideModal: hideModal
+    add,
+    getAll,
+    addListItem,
+    loadList,
+    loadDetails,
+    showDetails,
+    showModal,
+    hideModal
   };
 })();
 

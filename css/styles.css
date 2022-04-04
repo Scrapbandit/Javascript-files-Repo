@@ -54,12 +54,7 @@ header {
   grid-column-gap: 100px;
   margin: 30px 70px 70px 70px;
 }
-.list-group {
-  display: flex;
-  margin-right: 100px;
-  margin-left: 100px;
-  
-}
+
 @supports (display: grid) {
   .pokemon-list {
     grid-template-columns: 1fr 1fr 1fr;
